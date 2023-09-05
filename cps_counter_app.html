@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPS - COUNTER</title>
+  <style>
+    body{
+      background-color: whitesmoke;
+      font-family: Arial;
+      margin: 0px;
+      user-select: none;
+    }
+    nav{
+      background-color: rebeccapurple;
+      color: white;
+      padding: 30px;
+      font-size: 50px;
+    }
+    .cps-menu{
+      height: 300px;
+      width: 300px;
+      background-color: rebeccapurple;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      border: 0px solid transparent;
+      border-radius: 30px;
+    }
+    .cps-menu:active{
+      background-color: mediumpurple;
+    }
+  </style>
+</head>
+
+<body>
+
+<div>
+  
+  <nav>
+    
+    CPS - COUNTER
+    
+  </nav>
+  
+</div>
+
+<div>
+  
+  <br><br><br>
+  
+</div>
+
+<div>
+  
+  <h2>
+    Your CPS : <h id="cps">0</h>, Your Clicks : <h id="clicks">0</h>, Time left : <h id="time">10</h>Seconds
+  </h2>
+  
+</div>
+
+<div>
+  <center id="count">
+    <div class="cps-menu" onclick="start_Timer()" >
+      <div style="padding-top: 50%;">
+        Click here to count cps
+      </div>
+    </div>
+  </center>
+</div>
+
+</body>
+<script>
+var cps = 0;
+var clicks = 0;
+var cl = document.getElementById("clicks");
+var cp = document.getElementById("cps");
+var time = document.getElementById("time");
+var real_time_clicks = 0;
+var count = document.getElementById("count");
+
+function count_cp() {
+  cps = clicks/10;
+  cp.innerHTML = cps;
+  if (real_time_clicks <= 10) {
+    count.innerHTML = '<h1 style="user-select: text;">Your CPS has been counted . you clicked : ' + clicks + ' in 10 seconds . Your cps level is very very low please you need to watch some video tutorials on youtube' + '</h1> <br><br><a href="" style="text-decoration: none;color: dodgerblue;cursor: pointer;">Do you want to re count your cps</a>';
+  }
+  
+  
+  else if (real_time_clicks <= 50) {
+    document.getElementById("count").innerHTML = '<h1 style="user-select: text;">Your CPS has been counted . you clicked : ' + clicks + ' in 10 seconds . Your cps is ok but not good for gaming. your cps category is low . please increase your cps by watching some tutorials . ' + '</h1><br><br><a href="" style="text-decoration: none;color: dodgerblue;cursor: pointer;">Do you want to re count your cps</a>';
+  }
+  
+  else if (real_time_clicks <= 100) {
+    document.getElementById("count").innerHTML = '<h1 style="user-select: text;">Your CPS has been counted . you clicked : ' + clicks + ' in 10 seconds . Your cps is perfect but not too good for complex gaming . You can do good gaming with this cps but not very complex gaming . your cps category is mid range . suggested to improve your cps by practising regularly' + '</h1><br><br><a href="" style="text-decoration: none;color: dodgerblue;cursor: pointer;">Do you want to re count your cps</a>';
+  }
+  else if (real_time_clicks <= 200) {
+    document.getElementById("count").innerHTML = '<h1 style="user-select: text;">Your CPS has been counted . you clicked : ' + clicks + ' in 10 seconds . Your cps is very good for gaming. your cps category is high . ' + '</h1><br><br><a href="" style="text-decoration: none;color: dodgerblue;cursor: pointer;">Do you want to re count your cps</a>';
+  }
+  else if (real_time_clicks <= 300) {
+    document.getElementById("count").innerHTML = '<h1 style="user-select: text;">Your CPS has been counted . you clicked : ' + clicks + ' in 10 seconds . Your cps is extremly good for gaming. your cps category is exterme . ' + '</h1><br><br><a href="" style="text-decoration: none;color: dodgerblue;cursor: pointer;">Do you want to re count your cps</a>';
+  }
+  else if (real_time_clicks <= 500) {
+    document.getElementById("count").innerHTML = '<h1 style="user-select: text;">Your CPS has been counted . you clicked : ' + clicks + ' in 10 seconds . Your cps is unbeleable and extremly good for gaming. your cps category is unexpected and unbeleavable .  ' + '</h1><br><br><a href="" style="text-decoration: none;color: dodgerblue;cursor: pointer;">Do you want to re count your cps</a>';
+  }
+  else if (real_time_clicks <= 1000) {
+    document.getElementById("count").innerHTML = '<h1 style="user-select: text;">Your CPS has been counted . you clicked : ' + clicks + ' in 10 seconds . Your cps blasting. your cps category is undefined and unexpected it"s very very high . you seem"s not be a human you seems to be a machiene.  ' + '</h1><br><br><a href="" style="text-decoration: none;color: dodgerblue;cursor: pointer;">Do you want to re count your cps</a>';
+  }
+  else {
+    
+    document.getElementById("count").innerHTML = '<h1 style="user-select: text;"> Unable to count CPS there was an error </h1>';
+    
+  }
+
+
+}
+
+
+function start_Timer(){
+  
+  document.getElementById("count").innerHTML = '<div class="cps-menu" onclick="count_cps()" ><div style="padding-top: 50%;">Click here to count cps</div></div>';
+  
+  setTimeout(function(){
+    time.innerHTML = '9 ';
+  }, 1000);
+  setTimeout(function() {
+    time.innerHTML = '8 ';
+  }, 2000);
+  setTimeout(function() {
+    time.innerHTML = '7 ';
+  }, 3000);
+  setTimeout(function() {
+    time.innerHTML = '6 ';
+  }, 4000);
+  setTimeout(function() {
+    time.innerHTML = '5 ';
+  }, 5000);
+  setTimeout(function() {
+    time.innerHTML = '4 ';
+  }, 6000);
+  setTimeout(function() {
+    time.innerHTML = '3 ';
+  }, 7000);
+  setTimeout(function() {
+    time.innerHTML = '2 ';
+  }, 8000);
+  setTimeout(function() {
+    time.innerHTML = '1 ';
+  }, 9000);
+  setTimeout(function() {
+    time.innerHTML = '0.5 ';
+  }, 9500);
+  setTimeout(function() {
+    time.innerHTML = '0.25 ';
+  }, 9750);
+  setTimeout(function() {
+    time.innerHTML = '0.1 ';
+  }, 9900);
+  setTimeout(function() {
+    time.innerHTML = '0 ';
+    count_cp();
+  }, 10000);
+  
+}
+
+
+
+  function count_cps(){
+    real_time_clicks = clicks+1;
+    clicks = real_time_clicks;
+    
+    cl.innerHTML = real_time_clicks;
+  }
+</script>
+</html>

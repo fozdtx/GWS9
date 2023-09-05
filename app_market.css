@@ -1,0 +1,20 @@
+.app-market-top{
+    background-color: #1c1c1c;
+    color: white;
+    text-align: center;
+    user-select: none;
+    padding: 10px;
+  }
+  .app-market-apps{
+    padding: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+  }
+  .app-market-apps img{
+    width: 60px;
+  }
+  .app-market-apps:hover{
+    background:rgba(255, 255, 255, 0.35);
+  }

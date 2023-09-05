@@ -1,0 +1,15 @@
+
+body {
+  background-image: linear-gradient(to top right, #09334D, #0D1430, #56113D, #A5516A);
+  background-attachment: fixed;
+  color: white;
+  font-family: GWS9;
+  user-select: none;
+}
+nav{
+  margin-top: 170px;
+  text-align: center;
+}
+h1{
+ text-shadow: 0px 0px 10px white, 0px 0px 10px white;
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GWS 9 - DESKTOP</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="app_market.css">
+  <style>
+
+
+    body{
+      background-image: url("OIG.Y8.jpeg");
+      /* background-position: 0px -300px; */
+      font-family: GWS9;
+      user-select: none;
+      color: white;
+    }
+    ::selection{
+      background: white;color: black;
+    }
+    input{
+      border: 0px solid transparent;
+      border-bottom: 2px solid white;
+      padding: 10px;
+      color: white;
+      user-select: text;
+    text-shadow: 0px 0px 5px white, 0px 0px 5px white;
+    outline: none;
+    background: transparent;
+    transition: 0.5s;
+      font-family: GWS9;
+    
+    }
+    input:hover{
+      border-bottom-width: 3px;
+    }
+    input:focus{
+      border-bottom-width: 3px;
+    }
+    button{
+      background: transparent;
+      border: 0px solid transparent;
+      outline: none;
+      cursor: pointer;
+      transition: 0.5s;
+      font-size: 20px;
+      height: 20px;
+      color: white;
+    }
+    button:hover{
+      text-shadow: 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white;
+
+    }
+    button:focus{
+      text-shadow: 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white, 0px 0px 5px white;
+    
+    }
+    .spin{
+      background-image: linear-gradient(white, black);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      /* text-shadow: 0px 0px 5px white; */
+      animation-name: anm-spin;
+      animation-duration: 2s;
+      animation-direction: reverse;
+      animation-iteration-count: infinite;
+      font-size: 50px;
+    }
+    @keyframes anm-spin{
+      from{
+        transform: rotate(0deg);
+      }
+      to{
+        transform: rotate(360deg);
+      }
+    }
+    .apps{
+      margin: 10px;
+      padding: 13px;
+      color: whitesmoke;
+      text-align: center;
+      transition: 0.5s;
+      background-color: transparent;
+      cursor: pointer;
+      outline: none;
+    font-family: GWS9;
+      
+    }
+    .apps img{
+      width: 50px;
+    }
+    .apps:hover{
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    .apps:active {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .apps:focus {
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+    .contain{
+      display: flex;
+    }
+    iframe{
+      border-color: deepskyblue;
+      width: 100%;
+      height: 300px;
+    }
+    .btn-red{
+      background-image: linear-gradient(red 50%, darkred 50%);
+      border: 0px solid transparent;
+    }
+    .desktop-app{
+      width: 100%;
+      height: 300px;
+      background: #1C1C1C;
+      color: white;
+      padding: 8px;
+    }
+    .desktop-app button{
+      width: 100%;
+      height: 100px;
+      background: #1C1C1C;
+      color: white;
+      padding: 8px;
+    }
+    .desktop-app-wall{
+      width: 100%;
+      height: 300px;
+      background: whitesmoke;
+      color: black;
+      padding: 8px;
+      overflow: scroll;
+    }
+    .desktop-app-wall img{
+      width: 45%;
+    }
+    .desktop-app-wall img:hover{
+      border: 2px solid whitesmoke;
+      outline: 2px solid orange;
+      cursor: pointer;
+    }
+    .desktop-app-wall button{
+      color: black;
+      width: 100%;
+      height: 100px;
+      cursor: pointer;
+    }
+  </style>
+  </style>
+</head>
+
+<body>
+<!-- window.open('https://fozdtx.github.io/api/apps/demo/ssgo/foz_dtx_launch_app.html') -->
+<div class="contain">
+  <div class="apps" onclick="browser()">
+    <img src="apps/browser.png" alt="System Browser of GWS 9"> <br>
+    Browser
+  </div> 
+  
+  
+  
+  <!-- Personalise -->
+  <div class="apps">
+    <img src="apps/desktop.png" alt="System important apps of GWS 9" onclick="desktop()"> <br>
+    Desktop
+  </div>
+   
+   <div class="apps">
+     <img src="apps/app_market.png" alt="System important apps downloading network of GWS 9" onclick="app_market()"> <br>
+     App Market
+   </div>
+   
+   <div style="float: left;">
+   <div id="apps_r">
+   
+   </div>
+   </div>
+</div>
+
+<div id="apps_log">
+  <!-- <center><div style="width: 70%;box-shadow: 10px 10px 25px black;"><div style="height: 20px;background-image: linear-gradient(skyblue 50%, deepskyblue 50%);text-align: left;color: black;padding-bottom: 1%;padding-left: 5%;">Browser <button class="btn-red" style="margin-left: 85%;" onclick="close_browser()">x</button></div><iframe src="https://fozdtx.github.io/api/apps/demo/ssgo/foz_dtx_launch_app.html"></iframe></div></center> -->
+</div>
+
+<br>
+
+</body>
+<script>
+  function app_market_install_Youtube() {
+    document.getElementById("apps_r").innerHTML += '<div style="float: left;" class="apps" onclick="youtube()"><img src="apps/normal/YouTube.png"><br>You Tube </div>'
+  }
+  
+  function app_market_install_Facebook() {
+    document.getElementById("apps_r").innerHTML += '<div style="float: left;" class="apps" onclick="facebook()"><img src="apps/normal/facebook.png"><br>Facebook </div>'
+  }
+  
+  function app_market_install_Gmail() {
+    document.getElementById("apps_r").innerHTML += '<div style="float: left;" class="apps" onclick="gmail()"><img src="apps/normal/gmail.png"><br>G-Mail </div>'
+  }
+  
+  
+  function app_market_install_Hotstar() {
+    document.getElementById("apps_r").innerHTML += '<div style="float: left;" class="apps" onclick="hotstar()"><img src="apps/normal/hotstar.jpg"><br>Hot Star </div>'
+  }
+  
+  
+  
+  function app_market_install_Spotify() {
+    document.getElementById("apps_r").innerHTML += '<div style="float: left;" class="apps" onclick="spotify()"><img src="apps/normal/spotify.png"><br>Spotify </div>'
+  }
+  
+  function app_market_install_Vscode() {
+    document.getElementById("apps_r").innerHTML += '<div style="float: left;" class="apps" onclick="vscode()"><img src="apps/normal/vscode.png"><br>Vs Code </div>'
+  }
+  
+  
+  function app_market_install_HMG() {
+    document.getElementById("apps_r").innerHTML += '<div style="float: left;" class="apps" onclick="hmg()"><img src="apps/normal/hacker simulator mg beta.jpg"><br>HMG... </div>'
+  }
+</script>
+<script>
+  
+  function drag_menu(){
+    alert("hy");
+  }
+  
+  
+  function browser(){
+    document.getElementById("apps_log").innerHTML = '<center><div style="width: 70%;box-shadow: 10px 10px 25px black;"><div style="height: 20px;background-image: linear-gradient(skyblue 50%, deepskyblue 50%);text-align: left;color: black;padding-bottom: 1%;padding-left: 5%;">Browser <button class="btn-red" style="margin-left: 85%;" onclick="close_apps()">x</button></div><iframe src="https://fozdtx.github.io/api/apps/demo/ssgo/foz_dtx_launch_app.html"></iframe></div></center>';
+  }
+  function close_apps() {
+    document.getElementById("apps_log").innerHTML = '';
+  }
+  
+  
+  // desktop - app
+  function desktop() {
+    document.getElementById("apps_log").innerHTML = '<center><div style="width: 70%;box-shadow: 10px 10px 25px black;"><div style="height: 20px;background-image: linear-gradient(skyblue 50%, deepskyblue 50%);text-align: left;color: black;padding-bottom: 1%;padding-left: 5%;">Desktop <button class="btn-red" style="margin-left: 85%;" onclick="close_apps()">x</button></div><div class="desktop-app"><button onclick="desktop_app_change_wallpaper()">Change Wallpaper</button><br><button onclick="desktop_app_change_fonts()">Change Fonts</button></div></div></center>';
+  }
+  
+   function desktop_app_change_fonts() {
+     document.getElementById("apps_log").innerHTML = '<center><div style="width: 70%;box-shadow: 10px 10px 25px black;"><div style="height: 20px;background-image: linear-gradient(skyblue 50%, deepskyblue 50%);text-align: left;color: black;padding-bottom: 1%;padding-left: 5%;">Desktop - Change Fonts <button class="btn-red" style="margin-left: 70%;" onclick="close_apps()">x</button></div><div class="desktop-app-wall"><button onclick="change_font_command_1()">Monospace</button><br><button onclick="change_font_command_2() ">Arial</button><button onclick="change_font_command_3() ">Helvatica</button><button onclick="change_font_command_4() ">Default</button></div></div></center>';
+   }
+  
+  function desktop_app_change_wallpaper(){
+    document.getElementById("apps_log").innerHTML = '<center><div style="width: 70%;box-shadow: 10px 10px 25px black;"><div style="height: 20px;background-image: linear-gradient(skyblue 50%, deepskyblue 50%);text-align: left;color: black;padding-bottom: 1%;padding-left: 5%;">Desktop - Change Wallpaper<button class="btn-red" style="margin-left: 65%;" onclick="desktop()">x</button></div><div class="desktop-app-wall"><h1>Select wallpaper</h1><br><br><img src="OIG.Agb0dl.jpeg" onclick="change_wapplaper_command_1()"><img src="OIG (35).jpeg" onclick="change_wapplaper_command_2()"><img src="OIG (28).jpeg" onclick="change_wapplaper_command_3()"><img src="OIG (29).jpeg" onclick="change_wapplaper_command_4()"><img src="OIG.jJMu41aMKvo.jpeg" onclick="change_wapplaper_command_5()"></div></div></center>';
+  }
+  
+function change_wapplaper_command_2(){
+  document.body.style.backgroundImage = 'url("OIG (35).jpeg")';
+}
+function change_wapplaper_command_1() {
+  document.body.style.backgroundImage = 'url("OIG.Agb0dl.jpeg")';
+}
+function change_wapplaper_command_3() {
+  document.body.style.backgroundImage = 'url("OIG (28).jpeg")';
+}
+function change_wapplaper_command_4() {
+  document.body.style.backgroundImage = 'url("OIG (29).jpeg")';
+}
+function change_wapplaper_command_5() {
+  document.body.style.backgroundImage = 'url("OIG.jJMu41aMKvo.jpeg")';
+}
+
+function change_font_command_1(){
+  document.body.style.fontFamily = "monospace";
+}
+function change_font_command_2() {
+  document.body.style.fontFamily = "arial";
+}
+function change_font_command_3() {
+  document.body.style.fontFamily = "helvatica";
+}
+function change_font_command_4() {
+  document.body.style.fontFamily = "GWS9";
+}
+
+function app_market(){
+  document.getElementById("apps_log").innerHTML = '<center><div style="width: 70%;box-shadow: 10px 10px 25px black;"><div style="height: 20px;background-image: linear-gradient(skyblue 50%, deepskyblue 50%);text-align: left;color: black;padding-bottom: 1%;padding-left: 5%;">Apps market<button class="btn-red" style="margin-left: 65%;" onclick="close_apps()">x</button></div><div> <div id="app_logs"> </div> <div class="app-market-top"> App Market </div> <div style="float: left;background-color: #141414;width: 100%;height: 400px;"> <div style="display: flex;"> <div class="app-market-apps" onclick="app_market_install_Youtube()"> <img src="apps/normal/YouTube.png" alt="You Tube App Market"> <br> YouTube </div> <div class="app-market-apps" onclick="app_market_install_Facebook()"> <img src="apps/normal/facebook.png" alt="Facebook App Market"> <br> Facebook </div> <div class="app-market-apps" onclick="app_market_install_Gmail()"> <img src="apps/normal/gmail.png" alt="G-Mail App Market"> <br> G-mail </div> <div class="app-market-apps" onclick="app_market_install_Hotstar()"> <img src="apps/normal/hotstar.jpg" alt="Hot star App Market"> <br> Hot Star </div> <div class="app-market-apps" onclick="app_market_install_Spotify()"> <img src="apps/normal/spotify.png" alt="Spotify App Market"> <br> Spotify </div> <div class="app-market-apps" onclick="app_market_install_Vscode()"> <img src="apps/normal/vscode.png" alt="Vs Code App Market"> <br> Vs Code </div> <div class="app-market-apps" onclick="app_market_install_HMG()"> <img src="apps/normal/hacker simulator mg beta.jpg" alt="Hacker Simulator Mg Beta App Market"> <br> HMG </div><div style="float: right;color: white;margin-left: 70%;border-left: 2px solid white;height: 400px; padding-left: 45px;"> <h1> menu </h1><br> <hr> <br> App Name : <b id="app_name">Not selected</b> </div> </div></center>';
+}
+
+
+function youtube() {
+  window.open("https://www.youtube.com/")
+}
+function facebook() {
+  window.open("https://www.facebook.com/")
+}
+function gmail() {
+  window.open("https://www.gmail.com/")
+}
+function spotify() {
+  window.open("https://www.spotify.com/")
+}
+function hmg() {
+  window.open("https://hacking-simulator-mg-1-beta.ghgl-tgtg.repl.co/")
+}
+function hotstar() {
+  window.open("https://www.hotstar.com/")
+}
+function vscode() {
+  window.open("https://vscode.dev/")
+}
+
+
+// desktop - app - close
+</script>
+
+</html>
